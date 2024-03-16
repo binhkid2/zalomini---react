@@ -10,7 +10,8 @@ import TestPage from "./pages/TestPage";
 import { getSystemInfo } from "zmp-sdk";
 import Layout from "./pages/Layout";
 import NoPage from "./pages/NoPage";
-import { ScrollRestoration } from "./components/ScrollRestoration";
+import ProfilePage from "./pages/ProfilePage";
+import FavoritePage from "./pages/FavoritePage";
 if (getSystemInfo().platform === "android") {
   const androidSafeTop = Math.round(
     (window as any).ZaloJavaScriptInterface.getStatusBarHeight() /
@@ -34,6 +35,10 @@ export default function App() {
           <Route path={zalo_mini_url} element={<HomePage />} />
           <Route index element={<HomePage />} />
           <Route path="/test" element={<TestPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/favorite" element={<FavoritePage />} />
+
+
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

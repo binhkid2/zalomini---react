@@ -1,3 +1,4 @@
+/*
 import React from "react";
 import { FC, useEffect } from "react";
 import { useLocation } from "react-router";
@@ -48,3 +49,6 @@ export const ScrollRestoration: FC = () => {
 
   return <></>;
 };
+
+
+*/

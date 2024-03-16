@@ -70,13 +70,13 @@ className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opa
 
 
 
-export const RecentUploaded: FC = () => {
+export default function FavoritePage  ()  {
   return (
     <>
      <div className=" mx-auto border   space-y-4 my-3">
 	<div className="flex justify-between items-center">
-		<b className="px-3">Recent Uploaded</b>
-		<a href="/infinitePage/RecentUploaded"  className="unstyled text-xs underline px-3">Load all</a>
+		<b className="px-3">Favorite Product</b>
+		
 	</div>
 	<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 grid-flow-row scroll-smooth overflow-auto hide-scrollbar mx-auto">
  <ProductCard/>
@@ -88,14 +88,11 @@ export const RecentUploaded: FC = () => {
  <ProductCard/>
  <ProductCard/>
 	</div>
-  <div className="flex justify-center">
-  <a href="/infinitePage/RecentUploaded"  className="unstyled text-xs underline font-bold py-3">Load more</a>
-</div>
 	</div>
 
     </>
   );
-};
+}
 
 
 

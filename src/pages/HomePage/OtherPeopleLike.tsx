@@ -33,7 +33,7 @@ const ProductCard: FC = () => {
                 Ten San PhamTen San PhamTen San Pham
               </h3>
 
-              <span className="mt-3 inline-block bg-green-500  py-1 px-1 text-xs font-medium  tracking-wide text-white">
+              <span className="mt-3 w-full inline-block bg-green-500  py-1 px-1 text-xs font-medium  tracking-wide text-white">
                 <div className="flex flex-row">
                   <a href="/test" className="mr-3">
                     Chi tu 100.000 đ
