@@ -1,3 +1,5 @@
+
+
 import { FC } from "react";
 
 const mockdata: {
@@ -23,26 +25,25 @@ export const Categories: FC = () => {
       <div className="md:w-2/3 mx-auto border  p-3 md:p-10 space-y-4 ">
         <div className="flex justify-between items-center">
           <b>Categories</b>
-          <a href="#actions-grid" className="unstyled text-xs hover:underline">
-            +21 other services
-          </a>
         </div>
-        <div className="grid grid-rows-2 grid-flow-col gap-4 mx-auto scroll-smooth overflow-auto hide-scrollbar">
-          {mockdata.map((item, index) => (
+        <div className=" overflow-x-hidden hide-scrollbar">
+     <div className="grid grid-rows-2 grid-flow-col gap-4 mx-auto scroll-smooth overflow-auto hide-scrollbar">
+     {mockdata.map((item, index) => (
             <div
               key={index} // You should use a unique key for each item when rendering lists in React
-              className="shadow-small-blue flex flex-col gap-2 bg-surface-200-700-token rounded-container-token py-4 hover:scale-105 hover:shadow-md hover:cursor-pointer"
+              className="flex flex-col  w-max"
             >
-              <div className="w-18 text-xs">{item.title.substring(0, 12)}</div>
-              <img
-                className="w-20"
-                src="https://shop28decor.com/ct/uploads/2023/07/Artboard2.jpg"
-                alt=""
-              />
+                 <img className="w-20 h-20" src="https://shop28decor.com/ct/uploads/2023/07/Artboard2.jpg"/>
+             <p className="text-xs text-gray-500 ">{item.title}</p>
             </div>
           ))}
-        </div>
+  </div>
+</div>
       </div>
     </>
   );
 };
+
+
+
+
