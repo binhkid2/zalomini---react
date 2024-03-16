@@ -18,15 +18,17 @@ const ProductCard: FC = () => {
               </p>
 
               <img
+                loading="lazy"
                 src="https://images.unsplash.com/photo-1593795899768-947c4929449d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80"
                 alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0"
+                className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0 rounded-sm"
               />
 
               <img
+               loading="lazy"
                 src="https://images.unsplash.com/photo-1593795899630-b6033c0fa58d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
                 alt=""
-                className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100"
+                className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 rounded-sm"
               />
             </div>
 
@@ -55,7 +57,7 @@ export const OtherPeopleLike: FC = () => {
     <>
       <div className=" mx-auto border  p-3 md:p-10 space-y-4 my-3">
         <div className="flex justify-between items-center">
-          <b>Other people liked</b>
+          <b className="p-3">Other people liked</b>
           <a
             href="/infinitePage/PeopleLikes"
             className="unstyled text-xs underline "

@@ -12,6 +12,7 @@ import Layout from "./pages/Layout";
 import NoPage from "./pages/NoPage";
 import ProfilePage from "./pages/ProfilePage";
 import FavoritePage from "./pages/FavoritePage";
+import ProductPage from "./pages/ProductPage";
 if (getSystemInfo().platform === "android") {
   const androidSafeTop = Math.round(
     (window as any).ZaloJavaScriptInterface.getStatusBarHeight() /
@@ -37,7 +38,7 @@ export default function App() {
           <Route path="/test" element={<TestPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/favorite" element={<FavoritePage />} />
-
+          <Route path="/product" element={<ProductPage />} />
 
           <Route path="*" element={<NoPage />} />
         </Route>

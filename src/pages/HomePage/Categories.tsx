@@ -33,7 +33,7 @@ export const Categories: FC = () => {
               key={index} // You should use a unique key for each item when rendering lists in React
               className="flex flex-col  w-max"
             >
-                 <img className="w-20 h-20" src="https://shop28decor.com/ct/uploads/2023/07/Artboard2.jpg"/>
+                 <img className="w-20 h-20" src="https://shop28decor.com/ct/uploads/2023/07/Artboard2.jpg"  />
              <p className="text-xs text-gray-500 ">{item.title}</p>
             </div>
           ))}
