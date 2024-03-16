@@ -14,6 +14,23 @@ export default function HomePage() {
       <div className="h-96">
         asdasd
       </div>
+      <div className="h-96">
+        asdasd
+      </div>
+      <div className="h-96">
+        asdasd
+      </div>
+      <div className="h-96">
+        asdasd
+      </div>  <div className="h-96">
+        asdasd
+      </div>
+      <div className="h-96">
+        asdasd
+      </div>
+      <div className="h-96">
+        asdasd
+      </div>
     </>
   );
 }
