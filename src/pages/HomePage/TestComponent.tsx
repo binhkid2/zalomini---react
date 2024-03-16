@@ -29,7 +29,7 @@ export const TestComponent: FC = () => {
             +21 other services
           </a>
         </div>
-        <div className="grid grid-cols-4 gap-4 p-4">
+        <div className="grid grid-cols-4 gap-4 p-4 overflow-x-auto">
           {mockdata.map((item, index) => (
             <div
               key={index} // You should use a unique key for each item when rendering lists in React
