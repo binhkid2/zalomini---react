@@ -26,7 +26,9 @@ const zalo_mini_url = import.meta.env.VITE_ZALO_MINI_APP_ID;
 export default function App() {
   return (
     <BrowserRouter>
-    <ScrollRestoration />
+    {/* This is a comment inside a JSX element 
+    <ScrollRestoration/>
+    */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path={zalo_mini_url} element={<HomePage />} />
