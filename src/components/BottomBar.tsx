@@ -1,7 +1,7 @@
-import { faFaceGrinHearts } from "@fortawesome/free-solid-svg-icons/faFaceGrinHearts";
-import { faFaceKissWinkHeart } from "@fortawesome/free-solid-svg-icons/faFaceKissWinkHeart";
-import { faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons/faHandHoldingHeart";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-solid-svg-icons/faHeart";
+import { faListCheck } from "@fortawesome/free-solid-svg-icons/faListCheck";
+import { faUser } from "@fortawesome/free-solid-svg-icons/faUser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -15,32 +15,32 @@ const nav: {
   {
     title: "Home",
     url: "/",
-    icon: <FontAwesomeIcon icon={faHeart} />,
-    activeIcon: <FontAwesomeIcon icon={faHeart} style={{ color: "#008000" }} />,
+    icon: <FontAwesomeIcon icon={faHouse} />,
+    activeIcon: <FontAwesomeIcon icon={faHouse} style={{ color: "#008000" }} />,
   },
   {
     title: "Manage",
     url: "/manage",
-    icon: <FontAwesomeIcon icon={faHandHoldingHeart} />,
+    icon: <FontAwesomeIcon icon={faListCheck} />,
     activeIcon: (
-      <FontAwesomeIcon icon={faHandHoldingHeart} style={{ color: "#008000" }} />
+      <FontAwesomeIcon icon={faListCheck} style={{ color: "#008000" }} />
     ),
   },
   {
-    title: "Notification",
-    url: "/notification",
-    icon: <FontAwesomeIcon icon={faFaceGrinHearts} />,
+    title: "Favorite",
+    url: "/favorite",
+    icon: <FontAwesomeIcon icon={faHeart} />,
     activeIcon: (
-      <FontAwesomeIcon icon={faFaceGrinHearts} style={{ color: "#008000" }} />
+      <FontAwesomeIcon icon={faHeart} style={{ color: "#008000" }} />
     ),
   },
   {
     title: "Profile",
     url: "/profile",
-    icon: <FontAwesomeIcon icon={faFaceKissWinkHeart} />,
+    icon: <FontAwesomeIcon icon={faUser} />,
     activeIcon: (
       <FontAwesomeIcon
-        icon={faFaceKissWinkHeart}
+        icon={faUser}
         style={{ color: "#008000" }}
       />
     ),
