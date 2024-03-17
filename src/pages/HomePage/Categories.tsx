@@ -4,20 +4,22 @@ import { FC } from "react";
 
 const mockdata: {
   title: string;
+  url:string
 }[] = [
-  { title: "Credit borders" },
-  { title: "Banks nearby" },
-  { title: "Transfers" },
-  { title: "Refunds" },
-  { title: "Receipts" },
-  { title: "Taxes" },
-  { title: "sdfsdfsdf" },
-  { title: "sdfsdf sdf" },
-  { title: "Transfers" },
-  { title: "Refunds" },
-  { title: "Receipts" },
-  { title: "Taxes" },
+  { title: "Credit borders" ,url:"/sdads"},
+  { title: "Banks nearby"  ,url:"/sdads" },
+  { title: "Transfers"  ,url:"/sdads" },
+  { title: "Refunds"  ,url:"/sdads" },
+  { title: "Receipts"  ,url:"/sdads" },
+  { title: "Taxes"  ,url:"/sdads" },
+  { title: "sdfsdfsdf"  ,url:"/sdads" },
+  { title: "sdfsdf sdf"  ,url:"/sdads" },
+  { title: "Transfers"  ,url:"/sdads" },
+  { title: "Refunds"  ,url:"/sdads" },
+  { title: "Receipts"  ,url:"/sdads" },
+  { title: "Taxes"  ,url:"/sdads" },
 ];
+
 
 export const Categories: FC = () => {
   return (

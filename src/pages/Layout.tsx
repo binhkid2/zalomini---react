@@ -5,7 +5,7 @@ import Header from "../components/Header";
 const Layout = () => {
   return (
     <>
-      <Header />
+    <Header/>
       <div className="mb-16 p-2 md:p-5">
         <Outlet />
         <BottomBar />

@@ -15,6 +15,7 @@ import FavoritePage from "./pages/FavoritePage";
 import ProductPage from "./pages/ProductPage";
 import SearchPage from "./pages/SearchPage";
 import ManagePage from "./pages/ManagePage";
+import CategoryPage from "./pages/CategoryPage";
 /*
 if (getSystemInfo().platform === "android") {
   const androidSafeTop = Math.round(
@@ -45,6 +46,7 @@ export default function App() {
           <Route path="/product" element={<ProductPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/manage" element={<ManagePage />} />
+          <Route path="/category" element={<CategoryPage />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

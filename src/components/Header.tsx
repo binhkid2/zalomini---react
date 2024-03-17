@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import SearchBar from "./SearchBar";
-
+const zalo_mini_url = import.meta.env.VITE_ZALO_MINI_APP_ID;
 export default function Header() {
   const location = useLocation()
   return (
@@ -8,7 +8,11 @@ export default function Header() {
       <div className="h-10 flex justify-center">
         <Link to={"/"} className="place-self-center">Sỉ Thủ Công</Link>
       </div>
-      {location.pathname === '/' && <SearchBar />}
+      {location.pathname === '/' || location.pathname === zalo_mini_url ? (
+        <SearchBar />
+      ) : (
+       <></>
+      )}
      
     </div>
   );

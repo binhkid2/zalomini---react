@@ -1,12 +1,3 @@
-/*
-
-  <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRS1Eu4DVnB9-pMpic4IsUMylyoUOvXXtl1ADKwJy8ug&s" alt="" className="w-full h-40" /></div>
-  <div><img src="https://tuoitrebariavungtau.vn/wp-content/uploads/2023/08/15319063_1870502259827840_8901988026005563692_n.jpg" alt="" className="w-full h-40" /></div>
-  <div><img src="https://i.pinimg.com/474x/95/8f/06/958f0641d3f43d0b836ff16c8f32c76f.jpg" alt="" className="w-full h-40" /></div>
-  <div><img src="https://i.pinimg.com/564x/c1/9a/1d/c19a1d3823b60a19194fe700f0524ae6.jpg" alt="" className="w-full h-40" /></div>
-  
-*/
-
 import React, { useState } from "react";
 import "./banner.css";
 import { useKeenSlider } from "keen-slider/react";
@@ -91,24 +82,24 @@ export default function Banner() {
             />
           </div>
         </div>
+        {loaded && instanceRef.current && (
+          <div className="dots">
+            {[
+              ...Array(instanceRef.current.track.details.slides.length).keys(),
+            ].map((idx) => {
+              return (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    instanceRef.current?.moveToIdx(idx);
+                  }}
+                  className={"dot" + (currentSlide === idx ? " active" : "")}
+                ></button>
+              );
+            })}
+          </div>
+        )}
       </div>
-      {loaded && instanceRef.current && (
-        <div className="dots">
-          {[
-            ...Array(instanceRef.current.track.details.slides.length).keys(),
-          ].map((idx) => {
-            return (
-              <button
-                key={idx}
-                onClick={() => {
-                  instanceRef.current?.moveToIdx(idx);
-                }}
-                className={"dot" + (currentSlide === idx ? " active" : "")}
-              ></button>
-            );
-          })}
-        </div>
-      )}
     </>
   );
 }
