@@ -4,12 +4,7 @@ import { FC } from "react";
 
 
 export const BuyService: FC = () => {
-    const mockdata = [
-		{ label: '4 passengers' },
-		{ label: '100 km/h in 4 seconds' },
-		{ label: 'Automatic gearbox'},
-		{ label: 'Electric' }
-	]
+    
 
   return (
     <>
@@ -20,7 +15,7 @@ export const BuyService: FC = () => {
       <img 
       loading="lazy"
       className="w-40 h-40 rounded-2xl object-cover"
-      src="https://res.cloudinary.com/dtjj83jdh/image/upload/v1702119436/theheai_kbbmsa.png"
+      src="https://res.cloudinary.com/yenvietsoft/image/upload/v1702119436/theheai_kbbmsa.png"
       alt="Uploaded Thumbnail"
     />
     </div>

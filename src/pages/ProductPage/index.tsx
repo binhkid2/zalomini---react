@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function ProductPage  ()  {
     return (
       <>
-<div className="container px-5 py-20  mx-auto">
+<div className="container px-5 pb-20  mx-auto">
 <div className="lg:w-4/5 mx-auto flex flex-wrap">
   <img alt="ecommerce" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="https://cdn.pixabay.com/photo/2016/10/10/23/49/woman-1730199_1280.jpg"/>
   
