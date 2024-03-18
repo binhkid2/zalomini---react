@@ -4,13 +4,13 @@ import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons/faCircleAr
 import { faHeart } from "@fortawesome/free-solid-svg-icons/faHeart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC } from "react";
+import BackHeader from "../../components/BackHeader";
 
 
 
 const ProductCard: FC = () => {
 return(
   <>
-
 <div className="anim-float-card relative">
 
 <div className="group block card card-hover bg-base-300 shadow-xl py-3 px-3">
@@ -78,6 +78,7 @@ className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opa
 export default function FavoritePage  ()  {
   return (
     <>
+    <BackHeader />
      <div className=" mx-auto border   space-y-4 my-3">
 	<div className="flex justify-between items-center">
 		<b className="px-3">Favorite Product</b>

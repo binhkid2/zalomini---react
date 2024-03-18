@@ -1,9 +1,13 @@
 
+import { FC } from "react";
+import BackHeader from "../../components/BackHeader";
 
-export default  function ManagePage() {
+const ManagePage: FC = () => {
   return (
-      <>
-      <h1>ManagePage</h1>
-      </>
+   <>
+   <BackHeader />
+   </>
   );
-}
+};
+
+export default ManagePage;

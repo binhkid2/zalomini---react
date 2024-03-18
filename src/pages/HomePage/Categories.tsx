@@ -24,7 +24,7 @@ const mockdata: {
 export const Categories: FC = () => {
   return (
     <>
-      <div className="md:w-2/3 mx-auto border  p-3 md:p-10 space-y-4 ">
+      <div className="md:w-2/3 mx-auto border  px-2 md:px-4 md:mt-3 space-y-4 ">
           <b>Categories</b>
         <div className=" overflow-x-hidden hide-scrollbar">
      <div className="grid grid-rows-2 grid-flow-col gap-4 mx-auto scroll-smooth overflow-auto hide-scrollbar">

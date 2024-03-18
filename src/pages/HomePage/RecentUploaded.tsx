@@ -92,7 +92,7 @@ export const RecentUploaded: FC = () => {
         <div className="flex justify-center">
           <a
             href="/infinitePage/RecentUploaded"
-            className="unstyled text-xs underline font-bold py-3"
+            className="unstyled text-xs underline font-bold pb-2"
           >
             Load more
           </a>
