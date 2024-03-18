@@ -9,7 +9,7 @@ export default function SearchBar() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="text-xs sm:text-sm  flex flex-row mb-2 ml-2 ">
+      <div className="text-xs sm:text-sm  flex flex-row justify-start mb-2 ml-2 ">
 
 
         <div className="flex-grow item-center place-self-center">

@@ -4,14 +4,12 @@ import { RecentUploaded } from "./RecentUploaded";
 import { OtherPeopleLike } from "./OtherPeopleLike";
 import { MostView } from "./MostViews";
 import { NearBy } from "./NearBy";
-import Banner from "./Banner";
 import FloatButton from "./FloatButton";
 
 export default function HomePage() {
   return (
     <>
     <FloatButton/>
-    <Banner/>
     <Categories/>
     <RecentUploaded/>
     <OtherPeopleLike/>
