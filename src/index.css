@@ -10,3 +10,10 @@
     display: none;
   }
   
+:root {
+  --base-font-size: 12px; /* Default base font size */
+  /* Define more variables if needed for different scales */
+}
+body {
+  font-size: var(--base-font-size);
+}
