@@ -57,7 +57,7 @@ export default function Banner() {
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRS1Eu4DVnB9-pMpic4IsUMylyoUOvXXtl1ADKwJy8ug&s"
               alt=""
-              className="w-full h-40 keen-slider__slide"
+              className="w-full h-40 md:h-60 lg:h-80 keen-slider__slide"
             />
           </div>
           <div>

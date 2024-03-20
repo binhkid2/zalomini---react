@@ -6,6 +6,7 @@ import { NearBy } from "./NearBy";
 import FloatButton from "./FloatButton";
 import HomeHeader from "./Header";
 import Banner from "./Banner";
+import Footer1 from "../../components/Footer1";
 export default function HomePage() {
   return (
     <>
@@ -17,6 +18,7 @@ export default function HomePage() {
     <OtherPeopleLike/>
     <MostView/>
     <NearBy/>
+    <Footer1/>
     </>
   );
 }
