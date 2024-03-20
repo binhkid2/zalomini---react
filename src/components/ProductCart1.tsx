@@ -40,7 +40,7 @@ export default function ProductCard1 () {
             <h3 className="h3 text-xs font-bold">
               Ten San PhamTen San PhamTen San Pham
             </h3>
-            <span className="mt-3 py-3 px-2 w-full inline-block bg-green-500 text-xs font-medium  tracking-wide text-white ">
+            <span className="rounded-sm mt-3 py-3 px-2 w-full inline-block bg-green-500 text-xs font-medium  tracking-wide text-white ">
               <div className="flex flex-row  ">
                 <a href="/test" className="mx-auto ">
                   Chi Tu 100.000 đ
