@@ -193,7 +193,7 @@ export default function Footer1() {
         ))}
       </div>
       <hr />
-      <div className="py-10 md:flex md:mx-auto max-w-[1536px]">
+      <div className="py-10 md:flex md:mx-auto max-w-[1536px] hidden">
         {contactOptions.map(({ label, icon: Icon, link, details }) => (
           <div className="mx-auto my-4 text-center" key={label}>
             <Icon />
