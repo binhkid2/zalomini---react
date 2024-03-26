@@ -7,11 +7,11 @@ const BackHeader: React.FC = () => {
 const navigate = useNavigate();
   return (
     <Header
-    className=" pl-2  pb-[6px] bg-green-500"
+    className=" pl-2  pb-[6px] bg-green-500 bottom-rounded"
     showBackIcon={false}
     title={
       (
-        <div onClick={()=>(navigate('/'))}>
+        <div className="" onClick={()=>(navigate('/'))}>
           <div className="flex flex-grow py-3 pl-2">
             <img
               src="https://png.pngtree.com/element_pic/00/16/09/2057e0eecf792fb.jpg"

@@ -1,7 +1,8 @@
 import { faHeart } from "@fortawesome/free-solid-svg-icons/faHeart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FC, Suspense } from "react";
 
-export default function ProductCardSmall () {
+const ProductCardSmallContent : FC = () => {
     return(
       <>
         <div className="anim-float-card px-1 md:px-3 relative ">
@@ -17,14 +18,12 @@ export default function ProductCardSmall () {
               </p>
 
               <img
-                loading="lazy"
                 src="https://images.unsplash.com/photo-1593795899768-947c4929449d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2672&q=80"
                 alt=""
                 className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0 rounded-sm"
               />
 
               <img
-               loading="lazy"
                 src="https://images.unsplash.com/photo-1593795899630-b6033c0fa58d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
                 alt=""
                 className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 rounded-sm"
@@ -50,3 +49,23 @@ export default function ProductCardSmall () {
       </>
     )}
 
+const Fallback :FC = ()=>{
+
+  return(
+    <div className="anim-float-card px-1 md:px-3 relative ">
+    <div className="block card card-hover space-y-2 p-2 w-40 ">
+      <div className="group relative block">
+        <div className="animate-ping rounded-full bg-green-600 relative h-[150px] sm:h-[250px]"></div>
+      </div>
+    </div>
+  </div>
+  )
+}
+
+export const ProductCardSmall: FC = () => {
+  return (
+    <Suspense fallback={<Fallback />}>
+      <ProductCardSmallContent />
+    </Suspense>
+  );
+};

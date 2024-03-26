@@ -1,6 +1,6 @@
 
 import { FC } from "react";
-import ProductCard1 from "../../components/ProductCart1";
+import {ProductCard1} from "../../components/ProductCart1";
 
 
 export const RecentUploaded: FC = () => {

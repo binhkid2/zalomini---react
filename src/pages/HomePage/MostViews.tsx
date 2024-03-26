@@ -1,6 +1,6 @@
 
 import { FC } from "react";
-import ProductCardSmall from "../../components/ProductCartSmall";
+import {ProductCardSmall} from "../../components/ProductCartSmall";
 
 
 

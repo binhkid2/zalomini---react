@@ -6,8 +6,9 @@ import {
     SfIconShoppingCart,
     SfIconFavorite,
   } from "@storefront-ui/react";
+import { FC, Suspense } from "react";
   
-  export default function FavoriteCard() {
+    const FavoriteCardContent: FC = () => {
     return (
       <div className="border border-neutral-200 rounded-md hover:shadow-lg max-w-[300px]">
         <div className="relative">
@@ -58,3 +59,20 @@ import {
     );
   }
   
+  const Fallback: FC = () => {
+    return (
+      <div className="anim-float-card relative ">
+      <div className="group block card card-hover bg-base-300 shadow-xl py-3 px-3">
+      <div className="animate-ping   h-40 rounded-full bg-green-600"></div>
+      </div>
+    </div>
+    );
+  };
+
+  export const FavoriteCard: FC = () => {
+    return (
+      <Suspense fallback={<Fallback />}>
+        <FavoriteCardContent />
+      </Suspense>
+    );
+  };

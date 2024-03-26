@@ -9,6 +9,10 @@
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
+  .bottom-rounded {
+    border-radius: 0px 0px 10px 10px;
+  }
+  
   
 :root {
   --base-font-size: 12px; /* Default base font size */

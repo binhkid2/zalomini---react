@@ -2,13 +2,15 @@
 import {  SfLink, SfIconDelete } from '@storefront-ui/react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons/faEye";
+import { FC, Suspense } from 'react';
+import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 
 
-export default function ManageCard(){
-
+  const ManageCardContent: FC = () => {
     return (
         <>
-        <div className="relative flex border    hover:shadow-lg min-w-[320px] max-w-[640px] p-1 m-4">
+       <div className='border hover:shadow-lg min-w-[320px] max-w-[640px] p-1 m-4'>
+       <div className="relative flex ">
         <div className="relative overflow-hidden rounded-md w-[100px] sm:w-[176px]">
           <SfLink href="#">
             <img
@@ -25,7 +27,7 @@ export default function ManageCard(){
         </div>
         <div className="flex flex-col pl-4 min-w-[180px] flex-1">
           <div className="flex justify-between">
-          <SfLink href="#" variant="secondary" className="no-underline typography-text-sm sm:typography-text-lg">
+          <SfLink href="#" variant="secondary" className="no-underline typography-text-sm sm:typography-text-lg font-bold">
             Smartwatch Fitness Tracker
           </SfLink>
           <button
@@ -65,6 +67,29 @@ export default function ManageCard(){
           </div>
         </div>
       </div>
+      <div className='flex justify-center px-2'><button>Edit <FontAwesomeIcon icon={faPenNib} size="lg" /></button></div>
+       </div>
         </>
     )
 }
+
+const Fallback :FC = ()=>{
+
+  return(
+    <div className="anim-float-card px-1 md:px-3 relative ">
+    <div className="block card card-hover space-y-2 p-2 w-40 ">
+      <div className="group relative block">
+        <div className="animate-ping rounded-full bg-green-600 relative h-[150px] sm:h-[250px]"></div>
+      </div>
+    </div>
+  </div>
+  )
+}
+
+export const ManageCard: FC = () => {
+  return (
+    <Suspense fallback={<Fallback />}>
+      <ManageCardContent />
+    </Suspense>
+  );
+};

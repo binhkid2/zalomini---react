@@ -1,6 +1,6 @@
 import { FC } from "react";
 import BackHeader from "../../components/BackHeader";
-import ManageCard from "../../components/ManageCard";
+import {ManageCard} from "../../components/ManageCard";
 import Tabs from "../../components/Tabs";
 const ManagePage: FC = () => {
   return (

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { FC, Suspense, useState } from "react";
 import "./banner.css";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-
-export default function Banner() {
+const BannerContent: FC = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
@@ -51,7 +50,7 @@ export default function Banner() {
 
   return (
     <>
-      <div className="navigation-wrapper">
+      <div className="navigation-wrapper ">
         <div ref={sliderRef} className="keen-slider">
           <div>
             <img
@@ -132,3 +131,17 @@ function Arrow(props: {
 }
 */
 }
+
+
+const Fallback: FC = () => {
+  return(
+<div className="animate-ping w-full h-40 rounded-full bg-green-600"></div>
+  )
+}
+export const Banner: FC = () => {
+  return (
+    <Suspense fallback={<Fallback />}>
+      <BannerContent />
+    </Suspense>
+  );
+};
