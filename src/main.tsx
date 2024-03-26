@@ -44,10 +44,10 @@ export default function App() {
           <Route path="/test" element={<TestPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/favorite" element={<FavoritePage />} />
-          <Route path="/product" element={<ProductPage />} />
+          <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/manage" element={<ManagePage />} />
-          <Route path="/category" element={<CategoryPage />} />
+          <Route path="/category/:id" element={<CategoryPage />} />
           <Route path="/post" element={<PostPage />} />
           <Route path="*" element={<NoPage />} />
         </Route>

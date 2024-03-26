@@ -69,7 +69,7 @@ function sendForm(){
             style={{ position: "relative" }}
             className="w-14 h-14"
           >
-            <img src={base64Image} alt={`Image ${index}`} />
+            <img className="w-full h-full" src={base64Image} alt={`Image ${index}`} />
             <button
             className="absolute top-0 right-0"
             onClick={() => deleteImage(index)} // Pass index to deleteImage function
