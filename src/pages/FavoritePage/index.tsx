@@ -12,8 +12,9 @@ const FavoritePageContent: FC = () => {
   const params = useParams();
   return (
     <>
+    {params.id}
       <BackHeader />
-      <Tabs tabs={favoriteTabs} id={params.id} />
+      <Tabs tabs={favoriteTabs}  />
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:w-2/3 gap-2 md:gap-6 grid-flow-row scroll-smooth overflow-auto hide-scrollbar mx-auto">
         <FavoriteCard />
         <FavoriteCard />

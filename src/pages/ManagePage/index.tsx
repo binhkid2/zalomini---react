@@ -10,7 +10,7 @@ const ManagePageContent: FC = () => {
    <>
    id: {params.id}
     <BackHeader />
-  <Tabs tabs={ManageTabs}  id={params.id} />
+  <Tabs tabs={ManageTabs}  />
   <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
   <ManageCard/>
   <ManageCard/>
@@ -34,7 +34,7 @@ const Fallback: FC = () => {
     <>
       <BackHeader />
       {params.id}
-      <Tabs tabs={ManageTabs} id={params.id} />
+      <Tabs tabs={ManageTabs} />
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:w-2/3 gap-2 md:gap-6 grid-flow-row scroll-smooth overflow-auto hide-scrollbar mx-auto">
         <FallbackManageCard />
       </div>

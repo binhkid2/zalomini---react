@@ -5,12 +5,12 @@ import { FC, Suspense } from "react";
   const HomeHeaderContent: FC = () => {
   return (
     <Header
-      className=" pl-2  pb-[6px] bg-green-500"
+      className=" pl-2  pb-[6px] bg-green-500 fixed top-0 w-full z-50 h-18 "
       showBackIcon={false}
       title={
         (
           <div>
-            <div className="flex flex-grow py-3 pl-2">
+            <div className="flex flex-grow py-3 pl-2 h-18 ">
               <img
                 src="https://png.pngtree.com/element_pic/00/16/09/2057e0eecf792fb.jpg"
                 alt="user"

@@ -13,7 +13,7 @@ export const CategoriesTabs: {
     { id:5,title:"Fine Art Metals",titleVn: "Kim khí,mỹ nghệ", src: "/category/metals-craft",img:"" },
     { id:6,title:"Stone art",titleVn: "Đá,vật liệu cứng", src: "/category/stone-craft",img:"" },
     { id:7,title:"Textile",titleVn: "Dệt", src: "/category/textile-craft",img:"" },
-    { id:8,title:"Ceramic",titleVn: "Gốm", src: "/category/ceramic/craft",img:"" },
+    { id:8,title:"Ceramic",titleVn: "Gốm", src: "/category/ceramic-craft",img:"" },
     { id:9,title:"Other",titleVn: "Khác", src: "/category/other",img:"" },
   ];
   

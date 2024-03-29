@@ -3,20 +3,22 @@ import { FC, Suspense } from "react";
 const CategoriesContent: FC = () => {
   return (
     <>
-      <div className="md:w-2/3 mx-auto border  px-2 md:px-4 md:mt-3 space-y-4 ">
-        <b>Categories</b>
+      <div className="mt-28  md:w-2/3 mx-auto  py-1  px-2 md:px-4 md:mt-3 space-y-4 ">
+      <b>Categories</b>
         <div className=" overflow-x-hidden hide-scrollbar">
           <div className="grid grid-rows-2 grid-flow-col gap-4 mx-auto scroll-smooth overflow-auto hide-scrollbar">
-            {CategoriesTabs.map((item, index) => (
+            {CategoriesTabs.map((item) => (
               <div
-                key={index} // You should use a unique key for each item when rendering lists in React
+                key={item.id}
                 className="flex flex-col "
               >
+                <a href={item.src}>
                 <img
                   className="w-20 h-20 md:w-32"
                   src={item.img}
                 />
-                <p className="text-xs text-gray-500 w-20  md:w-32 truncate">{item.titleVn}</p>
+                </a>
+                <p className="text-xs text-gray-700 w-20  md:w-32 truncate">{item.titleVn}</p>
               </div>
             ))}
           </div>
@@ -28,8 +30,7 @@ const CategoriesContent: FC = () => {
 
 const Fallback: FC = () => {
   return (
-    <div className="md:w-2/3 mx-auto border  px-2 md:px-4 md:mt-3 space-y-4 ">
-      <b>Categories</b>
+    <div className="mt-28 md:w-2/3 mx-auto border  px-2 md:px-4 md:mt-3 space-y-4 ">
       <div className=" overflow-x-hidden hide-scrollbar">
         <div className="grid grid-rows-2 grid-flow-col gap-4 mx-auto scroll-smooth overflow-auto hide-scrollbar">
           {CategoriesTabs.map(( ) => (
