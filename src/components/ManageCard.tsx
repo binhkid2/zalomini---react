@@ -27,15 +27,15 @@ import { faPen } from '@fortawesome/free-solid-svg-icons/faPen';
         </div>
         <div className="flex flex-col pl-4 min-w-[180px] flex-1">
           <div className="flex justify-between">
-          <SfLink href="#" variant="secondary" className="no-underline typography-text-sm sm:typography-text-lg font-bold">
+          <SfLink href="#" variant="secondary" className="text-xs no-underline typography-text-sm sm:typography-text-lg font-bold">
             Smartwatch Fitness Tracker Smartwatch Fitness Tracker
           </SfLink>
           
               <SfDropdown trigger={<button className='mr-2' onClick={toggle}><FontAwesomeIcon icon={faEllipsis} size="lg" style={{color: "#04711a",}} /></button>} open={isOpen} onClose={close}>
       <ul className=" p-2 rounded bg-gray-100 w-max">
-        <li className='h-5 ' onClick={()=>{console.log("Hide")}}>Ẩn tin</li>
-        <li className='h-5 ' onClick={()=>{console.log("delete")}}>Xóa tin</li>
-        <li className='h-5 ' onClick={()=>{console.log("Pro")}}>Nâng cấp lên pro</li>
+        <li className='h-5 text-xs ' onClick={()=>{console.log("Hide")}}>Ẩn tin</li>
+        <li className='h-5 text-xs ' onClick={()=>{console.log("delete")}}>Xóa tin</li>
+        <li className='h-5 text-xs ' onClick={()=>{console.log("Pro")}}>Nâng cấp lên pro</li>
       </ul>
     </SfDropdown>
           

@@ -29,7 +29,7 @@ export default function SearchBar() {
             <button
               className="inline-block  py-2 px-3 text-gray-700 hover:bg-green-700 focus:relative"
               title="Manage"
-              onClick={()=>{navigate('/manage')}}
+              onClick={()=>{navigate('/manage/visible')}}
             >
               <FontAwesomeIcon icon={faListCheck} size="lg" />
             </button>

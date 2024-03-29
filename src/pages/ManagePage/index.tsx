@@ -11,7 +11,7 @@ const ManagePageContent: FC = () => {
    id: {params.id}
     <BackHeader />
   <Tabs tabs={ManageTabs}  />
-  <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <div className=" grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
   <ManageCard/>
   <ManageCard/>
   <ManageCard/>

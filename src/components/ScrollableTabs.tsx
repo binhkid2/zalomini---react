@@ -30,14 +30,14 @@ const ScrollableTabs: React.FC<TabsProps> = ({ tabs }) => {
       
   return (
 <>
-<div className=" flex   items-center justify-center">
-        <div className=" w-full md:w-2/3 lg:w-1/3 mx-4 my-2 shadow-md grid grid-rows-1 grid-flow-col gap-2 scroll-smooth overflow-auto hide-scrollbar   border border-gray-100  p-2 m-2 rounded-lg">
+<div className="mt-16 flex   items-center justify-center">
+        <div className=" w-full md:w-2/3 lg:w-1/3 mx-4 mb-2 shadow-md grid grid-rows-1 grid-flow-col gap-2 scroll-smooth overflow-auto hide-scrollbar   border border-gray-100  p-2 m-2 rounded-lg">
           {tabs.map((item) => (
             <button
             ref={item.src.substring(10) === params.id ? greenButtonRef : null} // Set ref if the button matches the condition
             key={item.id}
             onClick={() => changeColorAndNavigate(item.src)}
-            className={`w-max py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-green transition-all duration-300 ${
+            className={`text-xs w-max py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-green transition-all duration-300 ${
               params.id && item.src.substring(10) === params.id ? "bg-green-600 text-white" : ""
             }`}
           >

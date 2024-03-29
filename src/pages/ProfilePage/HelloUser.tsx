@@ -3,7 +3,7 @@ import { FC } from "react";
 export const HelloUser: FC = () => {
   return (
     <>
-      <div className=" flex justify-between mx-2 md:mx-10 my-2 md:my-10">
+      <div className="mt-20 flex justify-between mx-2 md:mx-10 my-2 md:my-10">
         <div className="w-1/2 self-center">
           <div className="flex justify-center mx-2 md:mx-10 my-2 md:my-10">
             <div className="self-center container flex flex-col items-center">

@@ -172,12 +172,12 @@ export default function Footer1() {
       <div className="grid justify-center grid-cols-[1fr_1fr] md:grid-cols-[repeat(4,1fr)] px-4 md:px-6 pb-10 max-w-[1536px] mx-auto">
         {categories.map(({ label, subcategories }) => (
           <ul className="grid grid-cols xs:pb-4" key={label}>
-            <li className="ml-4 text-lg font-medium leading-7 text-neutral-900 font-body">
+            <li className="ml-4 text-[12px] leading-7 text-neutral-900 font-body">
               {label}
             </li>
             {subcategories?.map(({ subcategoryLabel, link }) => (
               <SfListItem
-                className="py-2 !bg-transparent typography-text-sm font-body"
+                className="py-2 !bg-transparent text-[12px] font-body"
                 key={subcategoryLabel}
               >
                 <SfLink
@@ -197,7 +197,7 @@ export default function Footer1() {
         {contactOptions.map(({ label, icon: Icon, link, details }) => (
           <div className="mx-auto my-4 text-center" key={label}>
             <Icon />
-            <p className="py-1 my-2 font-medium typography-text-lg font-body">
+            <p className="py-1 my-2  font-body">
               <SfLink
                 variant="secondary"
                 className="no-underline text-neutral-600 hover:underline hover:!text-neutral-900 active:underline active:!text-neutral-900"
@@ -208,7 +208,7 @@ export default function Footer1() {
             </p>
             {details?.map((option) => (
               <p
-                className="leading-5 typography-text-sm text-neutral-600 font-body"
+                className="leading-5 text-neutral-600 font-body"
                 key={option}
               >
                 {option}

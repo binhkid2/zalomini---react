@@ -7,7 +7,7 @@ const BackHeader: React.FC = () => {
 const navigate = useNavigate();
   return (
     <Header
-    className=" pl-2  pb-[6px] bg-green-500 bottom-rounded "
+    className="h-18 pl-2  pb-[6px] bg-green-500 bottom-rounded fixed top-0 w-full z-50"
     showBackIcon={false}
     title={
       (
