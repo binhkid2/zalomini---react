@@ -15,7 +15,7 @@
   
   
 :root {
-  --base-font-size: 14px; /* Default base font size */
+  --base-font-size: 12px; /* Default base font size */
   /* Define more variables if needed for different scales */
 }
 body {

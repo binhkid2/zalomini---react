@@ -45,7 +45,7 @@ export default function PostPage() {
     <div className="px-4 mt-5">
     <TestPageTraditional/>
       <form onSubmit={sendForm}>
-        <label className="flex justify-between cursor-pointer mb-4 gap-2">
+        <label className="text-xs flex justify-between cursor-pointer mb-4 gap-2">
           Don’t display my personal information on a public profile
           <SfSwitch
             checked={personalInformation}
@@ -89,7 +89,7 @@ export default function PostPage() {
             className="block w-full py-2 pl-4 pr-7 rounded-md border border-neutral-300 placeholder:text-neutral-500"
           />
         </label>
-        <p className="text-neutral-500 typography-text-sm mt-8">
+        <p className="text-xs text-neutral-500 typography-text-sm mt-2">
           * marked fields are required
         </p>
         <div className="flex gap-x-4 md:justify-end mt-6">

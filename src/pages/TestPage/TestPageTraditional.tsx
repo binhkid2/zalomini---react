@@ -48,7 +48,7 @@ function sendForm(){
   return (
     <div>
       
-      <div className="flex justify-center">
+      <div className="flex justify-center mt-16">
       <div className="grid grid-cols-1 justify-center  text-center w-full mx-auto">
         <label htmlFor="fileInput" style={{ cursor: "pointer" }}>
           <img
