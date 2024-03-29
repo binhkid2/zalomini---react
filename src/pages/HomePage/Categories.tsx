@@ -1,23 +1,5 @@
+import { CategoriesTabs } from "../../types/categories";
 import { FC, Suspense } from "react";
-
-const mockdata: {
-  title: string;
-  url: string;
-}[] = [
-  { title: "Credit borders", url: "/sdads" },
-  { title: "Banks nearby", url: "/sdads" },
-  { title: "Transfers", url: "/sdads" },
-  { title: "Refunds", url: "/sdads" },
-  { title: "Receipts", url: "/sdads" },
-  { title: "Taxes", url: "/sdads" },
-  { title: "sdfsdfsdf", url: "/sdads" },
-  { title: "sdfsdf sdf", url: "/sdads" },
-  { title: "Transfers", url: "/sdads" },
-  { title: "Refunds", url: "/sdads" },
-  { title: "Receipts", url: "/sdads" },
-  { title: "Taxes", url: "/sdads" },
-];
-
 const CategoriesContent: FC = () => {
   return (
     <>
@@ -25,16 +7,16 @@ const CategoriesContent: FC = () => {
         <b>Categories</b>
         <div className=" overflow-x-hidden hide-scrollbar">
           <div className="grid grid-rows-2 grid-flow-col gap-4 mx-auto scroll-smooth overflow-auto hide-scrollbar">
-            {mockdata.map((item, index) => (
+            {CategoriesTabs.map((item, index) => (
               <div
                 key={index} // You should use a unique key for each item when rendering lists in React
-                className="flex flex-col  w-max"
+                className="flex flex-col "
               >
                 <img
-                  className="w-20 h-20"
-                  src="https://shop28decor.com/ct/uploads/2023/07/Artboard2.jpg"
+                  className="w-20 h-20 md:w-32"
+                  src={item.img}
                 />
-                <p className="text-xs text-gray-500 ">{item.title}</p>
+                <p className="text-xs text-gray-500 w-20  md:w-32 truncate">{item.titleVn}</p>
               </div>
             ))}
           </div>
@@ -50,8 +32,8 @@ const Fallback: FC = () => {
       <b>Categories</b>
       <div className=" overflow-x-hidden hide-scrollbar">
         <div className="grid grid-rows-2 grid-flow-col gap-4 mx-auto scroll-smooth overflow-auto hide-scrollbar">
-          {mockdata.map((item, index) => (
-            <div key={index} className="flex flex-col  w-max">
+          {CategoriesTabs.map(( ) => (
+            <div  className="flex flex-col  w-max">
                {/* Only replace this */}
               <div className="animate-ping w-20 h-20 rounded-full bg-green-600"></div>
             </div>

@@ -20,7 +20,7 @@ const nav: {
   },
   {
     title: "Manage",
-    url: "/manage",
+    url: "/manage/visible",
     icon: <FontAwesomeIcon icon={faListCheck} />,
     activeIcon: (
       <FontAwesomeIcon icon={faListCheck} style={{ color: "#008000" }} />
@@ -28,7 +28,7 @@ const nav: {
   },
   {
     title: "Favorite",
-    url: "/favorite",
+    url: "/favorite/product",
     icon: <FontAwesomeIcon icon={faHeart} />,
     activeIcon: (
       <FontAwesomeIcon icon={faHeart} style={{ color: "#008000" }} />

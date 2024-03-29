@@ -59,7 +59,7 @@ import { FC, Suspense } from "react";
     );
   }
   
-  const Fallback: FC = () => {
+ export const FallbackFavoriteCard: FC = () => {
     return (
       <div className="anim-float-card relative ">
       <div className="group block card card-hover bg-base-300 shadow-xl py-3 px-3">
@@ -71,7 +71,7 @@ import { FC, Suspense } from "react";
 
   export const FavoriteCard: FC = () => {
     return (
-      <Suspense fallback={<Fallback />}>
+      <Suspense fallback={<FallbackFavoriteCard />}>
         <FavoriteCardContent />
       </Suspense>
     );

@@ -41,12 +41,12 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route path={zalo_mini_url} element={<HomePage />} />
           <Route index element={<HomePage />} />
-          <Route path="/test" element={<TestPage />} />
+          <Route path="/test/:id" element={<TestPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/favorite" element={<FavoritePage />} />
+          <Route path="/favorite/:id" element={<FavoritePage />} />
           <Route path="/product/:id" element={<ProductPage />} />
           <Route path="/search" element={<SearchPage />} />
-          <Route path="/manage" element={<ManagePage />} />
+          <Route path="/manage/:id" element={<ManagePage />} />
           <Route path="/category/:id" element={<CategoryPage />} />
           <Route path="/post" element={<PostPage />} />
           <Route path="*" element={<NoPage />} />

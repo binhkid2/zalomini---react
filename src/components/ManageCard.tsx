@@ -72,7 +72,7 @@ import { faPen } from '@fortawesome/free-solid-svg-icons/faPen';
     )
 }
 
-const Fallback :FC = ()=>{
+export const FallbackManageCard :FC = ()=>{
 
   return(
     <div className="anim-float-card px-1 md:px-3 relative ">
@@ -87,7 +87,7 @@ const Fallback :FC = ()=>{
 
 export const ManageCard: FC = () => {
   return (
-    <Suspense fallback={<Fallback />}>
+    <Suspense fallback={<FallbackManageCard />}>
       <ManageCardContent />
     </Suspense>
   );
