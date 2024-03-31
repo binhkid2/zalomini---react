@@ -13,7 +13,16 @@
     border-radius: 0px 0px 10px 10px;
   }
   
+  .two-line-paragraph {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    max-height: 3em; /* (line-height) * (number of lines) */
+  }
   
+
 :root {
   --base-font-size: 12px; /* Default base font size */
   /* Define more variables if needed for different scales */
