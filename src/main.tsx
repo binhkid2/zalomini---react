@@ -30,10 +30,11 @@ if (getSystemInfo().platform === "android") {
 }
 */
 const zalo_mini_url = import.meta.env.VITE_ZALO_MINI_APP_ID;
-
+import { SnackbarProvider } from 'notistack';
 export default function App() {
   return (
     <BrowserRouter>
+      <SnackbarProvider>
     {/* This is a comment inside a JSX element 
     <ScrollRestoration/>
     */}
@@ -52,6 +53,7 @@ export default function App() {
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
+      </SnackbarProvider>
     </BrowserRouter>
   );
 }

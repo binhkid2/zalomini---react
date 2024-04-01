@@ -48,7 +48,7 @@ const nav: {
 ];
 
 export default function BottomBar() {
-  const [activeIndex, setActiveIndex] = useState(1); // Initially, no item is active
+  const [activeIndex, setActiveIndex] = useState(0);
   const navigate = useNavigate();
   function navigateUrl(index: number, url: string) {
     setActiveIndex(index);

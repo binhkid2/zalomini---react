@@ -7,9 +7,9 @@ import FloatButton from "./FloatButton";
 import {HomeHeader} from "./Header"
 import {Banner} from "./Banner";
 import Footer1 from "../../components/Footer1";
-import ZaloGetUserInfo from "./ZaloGetUserInfo";
+
 export default function HomePage() {
-  ZaloGetUserInfo()
+ 
   return (
     <>
     <HomeHeader/>

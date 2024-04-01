@@ -1,8 +1,11 @@
 import { Header } from "zmp-ui";
 import SearchBar from "../../components/SearchBar";
 import { FC, Suspense } from "react";
-
+//Zalo
+import { useAtomValue } from 'jotai'
+import { userAtom } from "../../utils/store";
   const HomeHeaderContent: FC = () => {
+    const user = useAtomValue(userAtom)
   return (
     <Header
       className=" pl-2  pb-[6px] bg-green-500 fixed top-0 w-full z-50 h-18 "
@@ -12,13 +15,13 @@ import { FC, Suspense } from "react";
           <div>
             <div className="flex flex-grow py-3 pl-2 h-18 ">
               <img
-                src="https://png.pngtree.com/element_pic/00/16/09/2057e0eecf792fb.jpg"
+                src= {user.avatar} 
                 alt="user"
                 className="w-8 h-8 "
               />
               <div className="ml-2">
                 <h4 className="text-sm">Si Thu Cong</h4>
-                <p className="text-xs text-white">Welcome Yenvietsoft</p>
+                <p className="text-xs text-white">Welcome {user.name}</p>
               </div>
             </div>
 
