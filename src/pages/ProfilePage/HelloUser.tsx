@@ -1,6 +1,10 @@
 import { FC } from "react";
-
+//Zalo
+import { useAtomValue } from 'jotai'
+import { userAtom,shopAtom } from "../../utils/store";
 export const HelloUser: FC = () => {
+  const user = useAtomValue(userAtom)
+  const shop = useAtomValue(shopAtom)
   return (
     <>
       <div className="mt-20 flex justify-between mx-2 md:mx-10 my-2 md:my-10">
@@ -11,13 +15,13 @@ export const HelloUser: FC = () => {
                 loading="lazy"
                 className="rounded-full w-12 h-12 md:w-24 md:h-24 object-cover"
                 alt=""
-                src="https://khoinguonsangtao.vn/wp-content/uploads/2022/08/hinh-nen-gai-xinh.jpg"
+                src={user.avatar}
               />
               <p className="font-bold bg-gradient-to-br from-blue-500 to-cyan-300 bg-clip-text text-transparent box-decoration-clone text-xs">
                 Xin chào
               </p>
               <p className="font-bold bg-gradient-to-br from-blue-500 to-cyan-300 bg-clip-text text-transparent box-decoration-clone text-xs">
-                userInfo.name
+                {user.name}
               </p>
               <p className="bg-gradient-to-br from-red-500 to-yellow-500 bg-clip-text text-transparent box-decoration-clone text-xs">
                 Have a nice day!
@@ -34,13 +38,13 @@ export const HelloUser: FC = () => {
                 loading="lazy"
                 className="rounded-full w-12 h-12 md:w-24 md:h-24 object-cover"
                 alt=""
-                src="https://khoinguonsangtao.vn/wp-content/uploads/2022/08/hinh-nen-gai-xinh.jpg"
+                src={shop.avatar}
               />
               <p className="font-bold bg-gradient-to-br from-blue-500 to-cyan-300 bg-clip-text text-transparent box-decoration-clone text-xs">
                 Chủ Shop
               </p>
               <p className="font-bold bg-gradient-to-br from-blue-500 to-cyan-300 bg-clip-text text-transparent box-decoration-clone text-xs">
-                shopInfo.name
+                {shop.name}
               </p>
               <button
                 type="button"

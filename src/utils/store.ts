@@ -3,7 +3,6 @@ import { atomWithStorage } from 'jotai/utils'
 
 export const favoriteProductsAtom = atomWithStorage<string[]>('favoriteProducts', []);
 export const currentLangAtom = atomWithStorage<string>('currentLang', 'vi');
-export const errorAtom = atom('')
 export const userAtom = atom({
     "name":'userName',
     'zaloId':'',
