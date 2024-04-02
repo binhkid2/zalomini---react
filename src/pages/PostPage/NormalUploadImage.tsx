@@ -1,7 +1,7 @@
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons/faCircleXmark";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ChangeEvent, useState } from "react";
-export default function TestPageTraditional() {
+export default function NormalUploadImage() {
     const [images, setImages] = useState<string[]>([]);
 
     const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -42,9 +42,6 @@ export default function TestPageTraditional() {
       setImages(updatedImages);
     };
   
-function sendForm(){
-    console.log(images)
-}
   return (
     <div>
       
@@ -60,6 +57,9 @@ function sendForm(){
           <input id="fileInput" type="file" onChange={handleImageChange} multiple style={{ display: "none" }} />
         </label>
         <b className="">Upload images </b>
+        <label className="text-xs text-blue-600">
+        Android:Can only upload 1 image at time at this time
+        </label>
       </div>
         </div>
       <div className="m-3 grid grid-row-1 gap-4 grid-flow-col scroll-smooth overflow-auto hide-scrollbar justify-center">
@@ -79,7 +79,7 @@ function sendForm(){
           </div>
         ))}
       </div>
-      <button onClick={sendForm}>Send </button>
+     
     </div>
   );
 }

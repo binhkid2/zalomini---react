@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC, Suspense } from "react";
 import { DateTimeConvertEng } from "../utils/DateTimeConvert";
 import { ProductCard1Props } from "../types/products";
+import { useNavigate } from "react-router-dom";
 const image_404 = import.meta.env.VITE_404_IMAGE;
 const ProductCard1Content: FC<ProductCard1Props> = ({
   address,
@@ -14,6 +15,7 @@ const ProductCard1Content: FC<ProductCard1Props> = ({
   description,
   _id,
 }) => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="anim-float-card relative ">
@@ -45,16 +47,16 @@ const ProductCard1Content: FC<ProductCard1Props> = ({
           </div>
 
           <div className="mt-1.5 ">
-            <a href={`/product/${_id}`} className=" text-xs font-bold">
+            <p onClick={() => navigate(`/product/${_id}`)} className=" text-xs font-bold">
               {name}
-            </a>
+            </p>
             <p className="text-xs two-line-paragraph">{description}</p>
 
             <span className="rounded-sm mt-3 py-3 px-2 w-full inline-block bg-green-500 text-xs font-medium  tracking-wide text-white ">
               <div className="flex flex-row  ">
-                <a href={`/product/${_id}`} className="mx-auto">
-                  Chi Tu {price} đ
-                </a>
+              <p onClick={() => navigate(`/product/${_id}`)} className="mx-auto">
+      Chi Tu {price} đ
+    </p>
 
                 {/* Your content here 
     <span className=" self-center items-center">

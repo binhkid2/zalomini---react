@@ -2,6 +2,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons/faHeart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FC, Suspense } from "react";
 import { ProductCardSmallProps } from "../types/products";
+import { useNavigate } from "react-router-dom";
 const image_404 = import.meta.env.VITE_404_IMAGE;
 const ProductCardSmallContent : FC<ProductCardSmallProps> = ({
   address,
@@ -10,6 +11,7 @@ const ProductCardSmallContent : FC<ProductCardSmallProps> = ({
   images,
   _id,
 }) => {
+  const navigate = useNavigate();
     return(
       <>
         <div className="anim-float-card px-1 md:px-3 relative ">
@@ -37,15 +39,15 @@ const ProductCardSmallContent : FC<ProductCardSmallProps> = ({
             </div>
 
             <div className="absolute inset-0 flex flex-col items-start justify-end p-1 mx-auto">
-              <a href={`/product/${_id}`} className="  text-xs font-bold text-white">
+              <p onClick={() => navigate(`/product/${_id}`)} className="  text-xs font-bold text-white">
                {name}
-              </a>
+              </p>
 
               <span className="rounded-md mt-3 w-full inline-block bg-green-500  py-1 px-1 text-xs font-medium  tracking-wide text-white">
                 <div className="flex flex-row ">
-                <a href={`/product/${_id}`} className="mx-auto">
+                <p onClick={() => navigate(`/product/${_id}`)} className="mx-auto">
                     Chi tu {price} đ
-                  </a>
+                  </p>
                 </div>
               </span>
             </div>
