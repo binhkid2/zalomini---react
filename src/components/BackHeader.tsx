@@ -7,7 +7,7 @@ const BackHeader: React.FC = () => {
 const navigate = useNavigate();
   return (
     <Header
-    className="h-18 pl-2  pb-[6px] bg-green-500 bottom-rounded fixed top-0 w-full z-50"
+    className="h-18  pb-[6px] bg-green-500 bottom-rounded fixed top-0 w-full z-50"
     showBackIcon={false}
     title={
       (
@@ -16,9 +16,9 @@ const navigate = useNavigate();
             <img
               src="https://png.pngtree.com/element_pic/00/16/09/2057e0eecf792fb.jpg"
               alt="user"
-              className="w-8 h-8 "
+              className="w-8 h-8 rounded-md"
             />
-            <div className="ml-2">
+            <div className="pl-2">
               <h4 className="text-sm">Si Thu Cong</h4>
               <p className="text-xs text-white">Noi buon ban so 1 Viet Nam</p>
             </div>

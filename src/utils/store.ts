@@ -9,15 +9,17 @@ export const userAtom = atom({
     'avatar':''
 })
 export const shopAtom = atom({
-    "_id":'',
+    "_id":'6607d39d40043c758ae9a83e',
     "name":'userName',
-    'description':'',
-    'address':'',
-    'owner':'',
-    'avatar':'',
+    'description':'description',
+    'address':'address',
+    'owner':'6607d13ffa1b88ec64552d16',
+    'avatar':'avatar',
     'phone':123,
     'view':1,
     'askOrder':1,
-    'coverImage':'',
-    'createdAt':''
+    'coverImage':'coverImage',
+    'createdAt':'000'
 })
+export const categoryAtom=atom('Other')
+export const imagesAtom = atom<string[]>([]);

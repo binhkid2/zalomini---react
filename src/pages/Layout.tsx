@@ -157,7 +157,7 @@ const Layout = () => {
   }, [shop, user]); // Include user and shop as dependencies for this effect
   return (
     <>
-      <div className="mb-16 md:p-5">
+      <div className="mb-16 ">
         <Outlet />
         <BottomBar />
       </div>
