@@ -10,19 +10,22 @@ interface Tab {
 interface TabsProps {
   tabs: Tab[];
 }
-
+import { useAtom } from 'jotai'
+import { paramAtom } from '../utils/store';
 const Tabs: React.FC<TabsProps> = ({ tabs }) => {
   const [openTab, setOpenTab] = useState(1 );
   const navigate = useNavigate();
-
+  const [param, setParam] = useAtom(paramAtom)
   const handleTabClick = (item: Tab) => {
+    setParam(item.title)
     setOpenTab(item.id);
     navigate(item.src);
   };
 
   return (
 <>
-<div className="text-xs mt-10 flex   items-center justify-center ">
+<p className='hidden'>{param}</p>
+<div className="text-xs mt-14 flex   items-center justify-center ">
       <div className="w-full md:w-2/3 lg:w-1/3 mx-4 my-2 shadow-md grid grid-rows-1 grid-flow-col gap-2 scroll-smooth overflow-auto hide-scrollbar   border border-gray-100  p-2 m-2 rounded-lg ">
         
           {tabs.map((item) => (

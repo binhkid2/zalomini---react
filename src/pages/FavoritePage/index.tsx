@@ -4,15 +4,18 @@ import {
   FallbackFavoriteCard,
 } from "../../components/FavoriteCard";
 import Tabs from "../../components/Tabs";
-import { useParams } from "react-router-dom";
-import { FC, Suspense } from "react";
+import { FC, Suspense, useEffect } from "react";
 import { favoriteTabs } from "../../types/favoriteTabs";
+import { paramAtom } from "../../utils/store";
+import { useAtom } from "jotai";
 
 const FavoritePageContent: FC = () => {
-  const params = useParams();
+  const [param, setParam] = useAtom(paramAtom)
+  useEffect(() => {
+    setParam('product')
+  }, []);
   return (
     <>
-    {params.id}
       <BackHeader />
       <Tabs tabs={favoriteTabs}  />
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:w-2/3 gap-2 md:gap-6 grid-flow-row scroll-smooth overflow-auto hide-scrollbar mx-auto">

@@ -22,4 +22,5 @@ export const shopAtom = atom({
     'createdAt':'000'
 })
 export const categoryAtom=atom('Other')
+export const paramAtom=atom('')
 export const imagesAtom = atom<string[]>([]);

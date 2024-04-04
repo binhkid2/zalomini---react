@@ -14,10 +14,10 @@ const ProductCardSmallContent : FC<ProductCardSmallProps> = ({
   const navigate = useNavigate();
     return(
       <>
-        <div className="anim-float-card px-1 md:px-3 relative ">
+        <div className="anim-float-card px-1 md:px-3 relative " >
         <div className="block card card-hover space-y-2 p-2 w-40 ">
           <div className="group relative block">
-            <div className="relative h-[150px] sm:h-[250px]">
+            <div className="relative h-[150px] sm:h-[250px]" >
               <button className="absolute end-2 top-2 z-10">
               <FontAwesomeIcon icon={faHeart} size="xl" style={{color: "#f0e6e6",}} />
               </button>

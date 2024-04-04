@@ -1,6 +1,6 @@
 import { faHeart } from "@fortawesome/free-solid-svg-icons/faHeart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FC, Suspense } from "react";
+import { FC, Suspense, useState } from "react";
 import { DateTimeConvertEng } from "../utils/DateTimeConvert";
 import { ProductCard1Props } from "../types/products";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +16,11 @@ const ProductCard1Content: FC<ProductCard1Props> = ({
   _id,
 }) => {
   const navigate = useNavigate();
+  const [showSecondImage, setShowSecondImage] = useState(false);
+
+  const handleImageToggle = () => {
+    setShowSecondImage(prevState => !prevState);
+  };
   return (
     <>
       <div className="anim-float-card relative ">
@@ -32,18 +37,18 @@ const ProductCard1Content: FC<ProductCard1Props> = ({
             <p className="absolute top-2 left-2 z-10 whitespace-nowrap bg-yellow-400 px-3 py-1 text-xs font-medium max-w-20 truncate">
               {address}
             </p>
-            <div className="relative h-40">
-              <img
-                src={(images && images[0]?.src) || image_404}
-                alt={(images && images[0]?.alt) || ""}
-                className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0 rounded-sm"
-              />
-              <img
-                src={(images && images[1]?.src) || image_404}
-                alt={(images && images[1]?.alt) || ""}
-                className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 rounded-sm"
-              />
-            </div>
+            <div className="relative h-40" onClick={handleImageToggle}>
+      <img
+        src={showSecondImage ? (images && images[1]?.src) || image_404 : (images && images[0]?.src) || image_404}
+        alt={showSecondImage ? (images && images[1]?.alt) || "" : (images && images[0]?.alt) || ""}
+        className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0 rounded-sm"
+      />
+      <img
+        src={showSecondImage ? (images && images[0]?.src) || image_404 : (images && images[1]?.src) || image_404}
+        alt={showSecondImage ? (images && images[0]?.alt) || "" : (images && images[1]?.alt) || ""}
+        className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100 rounded-sm"
+      />
+    </div>
           </div>
 
           <div className="mt-1.5 ">

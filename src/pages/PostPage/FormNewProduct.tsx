@@ -5,6 +5,7 @@ import { categoryAtom, imagesAtom, shopAtom } from "../../utils/store";
 import axios from "axios";
 import { useSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
+import { ConvertToImagesJSON,Images } from "../../utils/ConvertToImagesJSON";
 export default function FormNewProduct() {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -19,7 +20,6 @@ export default function FormNewProduct() {
   //TODO
   const variants = ["variants do it later useState"];
   const tags = ["tags do it later useState"];
-  
 //Get from Atom
 const [base64Urls, setBase64Urls] = useAtom(imagesAtom)
 const shop = useAtomValue(shopAtom)._id;
@@ -39,15 +39,13 @@ const category = useAtomValue(categoryAtom);
   const views = 1;
   const likes = 1;
   const hidden = false;
-
   const sendForm = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
     //first turn base64 images to array of images urls
     const nodejs_uploadS3 =
       import.meta.env.VITE_NODEJS_BACKEND + "/upload-image-base64";
-    let images: string[] = [];
-
+    const imagesArray: string[] = [];
     for (let i = 0; i < base64Urls.length; i++) {
       const data = {
         base64Image: base64Urls[i],
@@ -55,14 +53,14 @@ const category = useAtomValue(categoryAtom);
       try {
         // Making a POST request using Axios
         const response = await axios.post(nodejs_uploadS3, data);
-        images.push(response.data.image_url);
+        imagesArray.push(response.data.image_url);
       } catch (error) {
         // Handle errors here
         console.error("Error:", error);
       }
     }
+    let images:Images[] = ConvertToImagesJSON(imagesArray)
     console.log(images);
-
     //use those image urls
     const dataSend = {
       name,

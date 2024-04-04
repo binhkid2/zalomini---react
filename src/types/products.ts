@@ -54,6 +54,16 @@ export interface ProductCard1Props {
   images: Image[];
   description:string
 }
+
+export interface ManageCardProps {
+  address: string;
+  name: string;
+  price: number;
+  createdAt: string;
+  _id: string;
+  images: Image[];
+  description:string
+}
 //Product card small 
 export interface ProductCardSmallProps{
   address: string;

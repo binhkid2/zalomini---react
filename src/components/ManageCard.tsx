@@ -5,30 +5,41 @@ import { FC, Suspense } from 'react';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons/faEllipsis';
 import { SfDropdown, useDisclosure } from '@storefront-ui/react';
 import { faPen } from '@fortawesome/free-solid-svg-icons/faPen';
+import { ManageCardProps } from '../types/products';
+const image_404 = import.meta.env.VITE_404_IMAGE;
 
-
-  const ManageCardContent: FC = () => {
+  const ManageCardContent: FC<ManageCardProps> = ({
+    address,
+    name,
+    price,
+    createdAt,
+    images,
+    description,
+    _id,
+  }) => {
     const { isOpen, toggle, close } = useDisclosure();
     return (
         <>
+        <p className='hidden'>{_id}</p>
+        <p className='hidden'>{createdAt}</p>
        <div className='border hover:shadow-lg  p-1 m-4'>
        <div className="relative flex ">
         <div className="relative overflow-hidden rounded-md ">
           <SfLink href="#">
             <img
               className="w-36 md:w-48 h-36 md:h-48 object-cover border rounded-md "
-              src="https://storage.googleapis.com/sfui_docs_artifacts_bucket_public/production/smartwatch.png"
-              alt="alt"
+              src={(images && images[0]?.src) || image_404 }
+              alt={ (images && images[0]?.alt) || ""}
             />
           </SfLink>
           <p className="absolute top-0 left-0 z-10 whitespace-nowrap bg-yellow-400 px-3 py-1 text-xs font-medium">
-                Ha Noi-TQ
+                {address}
               </p>
         </div>
         <div className="flex flex-col pl-4 min-w-[180px] flex-1">
           <div className="flex justify-between">
           <SfLink href="#" variant="secondary" className="text-xs no-underline typography-text-sm sm:typography-text-lg font-bold">
-            Smartwatch Fitness Tracker Smartwatch Fitness Tracker
+            {name}
           </SfLink>
           
               <SfDropdown trigger={<button className='mr-2' onClick={toggle}><FontAwesomeIcon icon={faEllipsis} size="lg" style={{color: "#04711a",}} /></button>} open={isOpen} onClose={close}>
@@ -41,19 +52,12 @@ import { faPen } from '@fortawesome/free-solid-svg-icons/faPen';
           
           </div>
           <div className="my-2 sm:mb-0">
-            <ul className="text-xs font-normal leading-5 sm:typography-text-sm text-neutral-700">
-              <li>
-                <span className="mr-1">Size:</span>
-                <span className="font-medium">6.5</span>
-              </li>
-              <li>
-                <span className="mr-1">Color:</span>
-                <span className="font-medium">Red</span>
-              </li>
-            </ul>
+            <p className="text-xs font-normal leading-5 sm:typography-text-sm text-neutral-700">
+             {description}
+            </p>
           </div>
           <div className="items-center sm:mt-auto sm:flex">
-            <span className="font-bold sm:ml-auto sm:order-1 typography-text-sm sm:typography-text-lg mr-3">$2,345.99</span>
+            <span className="font-bold sm:ml-auto sm:order-1 typography-text-sm sm:typography-text-lg mr-3">{price} đ</span>
             <div className="flex items-center justify-between mt-4 sm:mt-0">
             <button
                 aria-label="edit"
@@ -85,10 +89,10 @@ export const FallbackManageCard :FC = ()=>{
   )
 }
 
-export const ManageCard: FC = () => {
+export const ManageCard: FC<ManageCardProps> = (props) => {
   return (
     <Suspense fallback={<FallbackManageCard />}>
-      <ManageCardContent />
+      <ManageCardContent {...props} />
     </Suspense>
   );
 };
