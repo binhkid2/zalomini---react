@@ -1,4 +1,3 @@
-
 export interface  ProductType {
     _id: string;
     name: string;
@@ -54,7 +53,16 @@ export interface ProductCard1Props {
   images: Image[];
   description:string
 }
-
+export const initProduct1: ProductCard1Props = {
+  address: '',
+  name: '',
+  price: 10000,
+  shopName: '',
+  createdAt: '',
+  _id: '',
+  images: [],
+  description:''
+}
 export interface ManageCardProps {
   address: string;
   name: string;

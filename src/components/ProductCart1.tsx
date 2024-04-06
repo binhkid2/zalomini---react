@@ -52,14 +52,14 @@ const ProductCard1Content: FC<ProductCard1Props> = ({
           </div>
 
           <div className="mt-1.5 ">
-            <p onClick={() => navigate(`/product/${_id}`)} className=" text-xs font-bold">
+            <p onClick={() => navigate(`/product/${_id}`)} className=" text-xs font-bold cursor-pointer">
               {name}
             </p>
             <p className="text-xs two-line-paragraph">{description}</p>
 
             <span className="rounded-sm mt-3 py-3 px-2 w-full inline-block bg-green-500 text-xs font-medium  tracking-wide text-white ">
               <div className="flex flex-row  ">
-              <p onClick={() => navigate(`/product/${_id}`)} className="mx-auto">
+              <p onClick={() => navigate(`/product/${_id}`)} className="mx-auto cursor-pointer">
       Chi Tu {price} đ
     </p>
 
