@@ -13,6 +13,7 @@ const FavoritePageContent: FC = () => {
   const [param, setParam] = useAtom(paramAtom)
   useEffect(() => {
     setParam('product')
+    console.log(param)
   }, []);
   return (
     <>

@@ -12,6 +12,7 @@ import { ProductCard1Props, initProduct1 } from '../../types/products';
 import { useParams } from 'react-router-dom';
 import DefaultFallback from '../../components/DefaultFallBack';
 import ModalImage from '../../components/ModalImage';
+import  { ImagesListType } from 'react-spring-lightbox';
 export default function ProductImages() {
 // Inside your component
 const { id } = useParams(); // Assuming "id" is the parameter you want to access
@@ -26,10 +27,16 @@ function handleOpenModal() {
   setOpenModal(!openModal); // Toggle the value of openModal
 }
 
+const imagesArray:ImagesListType = product.images.map(item => ({
+  alt: item.alt,
+  loading: 'lazy',
+  src: item.src
+}));
   async function fetchProduct() {
     try {
       const response = await axios.get(get1Product);
       setProduct(response.data);
+      console.log(response.data.images)
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -50,7 +57,7 @@ function handleOpenModal() {
 
   return (
     <>
-     {openModal && <ModalImage images={product.images}/>}
+     {openModal && <ModalImage images={imagesArray}/>}
    
     <div className="relative flex flex-col w-full max-h-[600px] aspect-[4/3]">
        

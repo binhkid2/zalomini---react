@@ -75,7 +75,6 @@ const ProductCard1Content: FC<ProductCard1Props> = ({
           <div className="flex justify-between">
             <p className="text-xs truncate text-blue-600 ">{shopName}</p>
             <p className="text-xs truncate  ">
-              {" "}
               {DateTimeConvertEng(createdAt)}
             </p>
           </div>

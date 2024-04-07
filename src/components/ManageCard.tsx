@@ -38,7 +38,7 @@ const image_404 = import.meta.env.VITE_404_IMAGE;
         </div>
         <div className="flex flex-col pl-4 min-w-[180px] flex-1">
           <div className="flex justify-between">
-          <SfLink href="#" variant="secondary" className="text-xs no-underline typography-text-sm sm:typography-text-lg font-bold">
+          <SfLink href="#" variant="secondary" className="text-xs no-underline typography-text-sm sm:typography-text-lg font-bold w-full truncate">
             {name}
           </SfLink>
           
@@ -52,7 +52,7 @@ const image_404 = import.meta.env.VITE_404_IMAGE;
           
           </div>
           <div className="my-2 sm:mb-0">
-            <p className="text-xs font-normal leading-5 sm:typography-text-sm text-neutral-700">
+            <p className="text-xs font-normal leading-5 sm:typography-text-sm text-neutral-700 two-line-paragraph ">
              {description}
             </p>
           </div>
