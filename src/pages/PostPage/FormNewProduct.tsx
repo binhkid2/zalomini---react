@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SfInput, SfButton, SfThumbnail } from "@storefront-ui/react";
+import { SfInput, SfButton, SfThumbnail, SfSwitch } from "@storefront-ui/react";
 import { useAtomValue, useAtom } from "jotai";
 import { categoryAtom, imagesAtom, shopAtom } from "../../utils/store";
 import axios from "axios";
@@ -22,6 +22,7 @@ export default function FormNewProduct() {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const [loading, setLoading] = useState(false);
+  const [isWholeSale, setIsWholeSale] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
@@ -39,13 +40,27 @@ export default function FormNewProduct() {
   const [inputValue, setInputValue] = useState<string>("");
 
   const handleInputKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && inputValue.trim() !== "") {
-      setVariants([...variants, { variant: inputValue.trim() }]);
-      setInputValue(""); // Clear input field after adding
+    if (e.key === "Enter" || e.key === "," || e.key === ";") {
+      e.preventDefault(); // Prevent form submission or comma/semicolon input
+      addVariantsFromString(inputValue);
     }
   };
 
-//tags
+  const addVariantsFromString = (inputString: string) => {
+    const newVariants = inputString
+      .split(/[;,]+/) // Split input value by commas or semicolons
+      .map((variant) => variant.trim()) // Trim each variant
+      .filter((variant) => variant !== ""); // Filter out empty variants
+
+    if (newVariants.length > 0) {
+      setVariants([
+        ...variants,
+        ...newVariants.map((variant) => ({ variant })),
+      ]); // Add new variants to the existing variants array
+      setInputValue(""); // Clear input field after adding
+    }
+  };
+  //tags
   const [tags, setTags] = useState(initTags);
   const removeTag = (val: string) => {
     const newList = tags.filter((item) => item.tag !== val);
@@ -55,8 +70,20 @@ export default function FormNewProduct() {
   const [inputValueTag, setInputValueTag] = useState<string>("");
 
   const handleInputKeyPressTag = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && inputValueTag.trim() !== "") {
-      setTags([...tags, { tag: inputValueTag.trim() }]);
+    if (e.key === "Enter" || e.key === "," || e.key === ";") {
+      e.preventDefault(); // Prevent form submission or comma/semicolon input
+      addTagsFromString(inputValueTag);
+    }
+  };
+
+  const addTagsFromString = (inputString: string) => {
+    const newTags = inputString
+      .split(/[;,]+/) // Split input value by commas or semicolons
+      .map((tag) => ({ tag: tag.trim() })) // Trim each tag and create an object
+      .filter((tagObj) => tagObj.tag !== ""); // Filter out empty tags
+
+    if (newTags.length > 0) {
+      setTags([...tags, ...newTags]); // Add new tags to the existing tags array
       setInputValueTag(""); // Clear input field after adding
     }
   };
@@ -184,7 +211,7 @@ export default function FormNewProduct() {
 
         <label>
           <span className="block mt-1 typography-label-sm font-medium">
-            Price <span className="text-xs text-red-500"> *</span>
+            Price (VND) <span className="text-xs text-red-500"> *</span>
           </span>
           <SfInput
             value={price}
@@ -205,6 +232,7 @@ export default function FormNewProduct() {
             onChange={(event) => setDescription(event.target.value)}
             placeholder="Write something about your product..."
             className="block w-full py-2 pl-4 pr-7 rounded-md border border-neutral-300 placeholder:text-neutral-500"
+            rows={4}
           />
         </label>
         {/*  Variants */}
@@ -220,7 +248,7 @@ export default function FormNewProduct() {
             onChange={(event) => setInputValue(event.target.value)}
           />
         </label>
-        <ul className="flex flex-wrap gap-4 sm:flex-row my-2">
+        <ul className="flex flex-wrap gap-1 sm:flex-row my-2">
           {variants.map(({ variant }) => (
             <li key={variant}>
               <SfChip
@@ -239,11 +267,13 @@ export default function FormNewProduct() {
           ))}
         </ul>
 
-
         <label>
-          <span className="block mt-1 typography-label-sm font-medium">
-            Quantity
-          </span>
+          <p className="block mt-1 typography-label-sm font-medium">
+            Quantity{" "}
+            <span className="text-xs text-neutral-500 typography-text-sm mt-2">
+              (keep blank if the product is alway available)
+            </span>
+          </p>
           <SfInput
             value={quantity}
             placeholder="quantity"
@@ -252,39 +282,45 @@ export default function FormNewProduct() {
             onChange={(event) => setQuantity(parseInt(event.target.value))}
           />
         </label>
-
-        <label>
-          <span className="block mt-1 typography-label-sm font-medium">
-            wholesalePrice
-          </span>
-          <SfInput
-            value={wholesalePrice}
-            placeholder="wholesalePrice"
-            className=""
-            required
-            onChange={(event) =>
-              setWholesalePrice(parseInt(event.target.value))
-            }
-          />
+        <label className="flex justify-between cursor-pointer mb-4 gap-2">
+        WholeSale Price (If has)?
+        <SfSwitch checked={isWholeSale} onChange={() => setIsWholeSale(!isWholeSale)} />
         </label>
+        {isWholeSale && (
+          <div className="flex justify-between">
+            <label className="w-1/3">
+              <span className="block mt-1 text-xs font-bold">
+                Wholesale Price (VND)
+              </span>
+              <SfInput
+                value={wholesalePrice}
+                placeholder="Wholesale Price"
+                className=""
+                required
+                onChange={(event) =>
+                  setWholesalePrice(parseInt(event.target.value))
+                }
+              />
+            </label>
+
+            <label className="w-1/3">
+              <span className="block mt-1 text-xs font-bold">
+                MOQ
+              </span>
+              <SfInput
+                value={moq}
+                placeholder="MOQ"
+                className=""
+                required
+                onChange={(event) => setMoq(parseInt(event.target.value))}
+              />
+            </label>
+          </div>
+        )}
 
         <label>
           <span className="block mt-1 typography-label-sm font-medium">
-            moq
-          </span>
-          <SfInput
-            value={moq}
-            placeholder="moq"
-            className=""
-            required
-            onChange={(event) => setMoq(parseInt(event.target.value))}
-          />
-        </label>
-
-        <label>
-          <span className="block mt-1 typography-label-sm font-medium">
-            {" "}
-            notice{" "}
+            notice (if any)
           </span>
           <SfInput
             value={notice}
@@ -294,8 +330,8 @@ export default function FormNewProduct() {
           />
         </label>
 
- {/*  Tags */}
- <label>
+        {/*  Tags */}
+        <label>
           <span className="block mt-1 typography-label-sm font-medium">
             Tags
           </span>
@@ -327,22 +363,23 @@ export default function FormNewProduct() {
           ))}
         </ul>
 
-
-
-
         <p className="text-xs text-neutral-500 typography-text-sm mt-2">
           * marked fields are required
         </p>
         <div className="flex gap-x-4 md:justify-end mt-6">
-          <SfButton
-            type="submit"
-            className="flex-grow md:flex-grow-0"
-            disabled={loading}
-            onClick={sendForm}
-          >
-            Submit
-          </SfButton>
-        </div>
+  <SfButton
+    type="submit"
+    className="flex-grow md:flex-grow-0"
+    disabled={
+      loading || 
+      (name === '' || description === '' || price === 0)
+    }
+    onClick={sendForm}
+  >
+    Submit
+  </SfButton>
+</div>
+
       </div>
     </>
   );

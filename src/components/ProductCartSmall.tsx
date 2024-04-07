@@ -39,7 +39,7 @@ const ProductCardSmallContent : FC<ProductCardSmallProps> = ({
             </div>
 
             <div className="absolute inset-0 flex flex-col items-start justify-end p-1 mx-auto">
-              <p onClick={() => navigate(`/product/${_id}`)} className="  text-xs font-bold text-white">
+              <p onClick={() => navigate(`/product/${_id}`)} className="  text-xs font-bold  truncate w-full">
                {name}
               </p>
 

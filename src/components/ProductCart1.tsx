@@ -23,7 +23,7 @@ const ProductCard1Content: FC<ProductCard1Props> = ({
   };
   return (
     <>
-      <div className="anim-float-card relative ">
+      <div className="anim-float-card relative">
         <div className="group block card card-hover bg-base-300 shadow-xl py-3 px-3">
           <div className="relative">
             <button className="absolute end-2 top-2 z-10">
@@ -51,8 +51,8 @@ const ProductCard1Content: FC<ProductCard1Props> = ({
     </div>
           </div>
 
-          <div className="mt-1.5 ">
-            <p onClick={() => navigate(`/product/${_id}`)} className=" text-xs font-bold cursor-pointer">
+          <div className="mt-1.5">
+            <p onClick={() => navigate(`/product/${_id}`)} className=" text-xs font-bold cursor-pointer truncate ">
               {name}
             </p>
             <p className="text-xs two-line-paragraph">{description}</p>
