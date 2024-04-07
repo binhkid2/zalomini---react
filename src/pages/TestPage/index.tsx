@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import FormModal from '../../components/FormModal';
 
 
 export default  function TestPage () {
@@ -8,7 +9,7 @@ export default  function TestPage () {
     <div>
       <h2>Test Page</h2>
       <p>ID: {params.id}</p>
-      {/* Other content for the TestPage component */}
+      <FormModal/>
     </div>
   );
 }

@@ -11,6 +11,7 @@ import axios from "axios";
 import { ProductCard1Props, initProduct1 } from '../../types/products';
 import { useParams } from 'react-router-dom';
 import DefaultFallback from '../../components/DefaultFallBack';
+import ModalImage from '../../components/ModalImage';
 export default function ProductImages() {
 // Inside your component
 const { id } = useParams(); // Assuming "id" is the parameter you want to access
@@ -18,6 +19,12 @@ const get1Product = `${import.meta.env.VITE_NODEJS_BACKEND}/products/${id}`;
   const [activeIndex, setActiveIndex] = useState(0);
   const [product, setProduct] = useState<ProductCard1Props >(initProduct1);
   const [loading, setLoading] = useState(true);
+  // Inside your component
+const [openModal, setOpenModal] = useState(false);
+
+function handleOpenModal() {
+  setOpenModal(!openModal); // Toggle the value of openModal
+}
 
   async function fetchProduct() {
     try {
@@ -42,7 +49,11 @@ const get1Product = `${import.meta.env.VITE_NODEJS_BACKEND}/products/${id}`;
   };
 
   return (
+    <>
+     {openModal && <ModalImage images={product.images}/>}
+   
     <div className="relative flex flex-col w-full max-h-[600px] aspect-[4/3]">
+       
       <SfScrollable
         className="w-full h-full snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         activeIndex={activeIndex}
@@ -57,7 +68,7 @@ const get1Product = `${import.meta.env.VITE_NODEJS_BACKEND}/products/${id}`;
   <DefaultFallback />
 ) : (
   product.images.map(({ src, alt }, index) => (
-    <div key={`${alt}-${index}`} className="flex justify-center h-full basis-full shrink-0 grow snap-center">
+    <div key={`${alt}-${index}`} className="flex justify-center h-full basis-full shrink-0 grow snap-center" onClick={()=>{handleOpenModal()}}>
       <img
         aria-label={alt}
         aria-hidden={activeIndex !== index}
@@ -114,5 +125,6 @@ const get1Product = `${import.meta.env.VITE_NODEJS_BACKEND}/products/${id}`;
         ))}
       </SfScrollable>
     </div>
+    </>
   );
 }
